@@ -31,6 +31,8 @@ img {
   --font-mono: "Mona Sans Mono";
   --heading-1-font-size: 56px;
   --heading-1-line-height: 1.1;
+  --heading-4-font-size: 34px;
+  --heading-4-line-height: 1.3;
   --color-black: #000;
   --color-white: #fff;
   --color-muted: #A4AEA6;
@@ -58,13 +60,42 @@ img {
     --layer-skip-link: 100;
  
 }
+.border-top{
+    border-top: 1px solid var(--color-border-muted)
+}
  
 @media (max-width:640px) {
   :root {
     ----heading-1-font-size: 36px;
   }
 }
- 
+
+.theme-light {
+  --color-muted: #58635B;
+  --color-border-muted: #E4EBE6;
+
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.case-study-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   max-width: 608px;
+   margin-left: auto;
+   margin-right: auto;
+    gap: 1em;
+    padding: var(--spacing-64);
+
+}
+
+.border-inline {
+ border-left:1px solid var(--color-border-muted);
+ border-right:1px solid var(--color-border-muted);
+}
+
 body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -118,6 +149,12 @@ body {
 .heading-size-1 {
   font-size: var(--heading-1-font-size);
   line-height: var(--heading-1-line-height);
+}
+
+ 
+.heading-size-4 {
+  font-size: var(--heading-4-font-size);
+  line-height: var(--heading-4-line-height);
 }
  
  
@@ -476,7 +513,7 @@ body {
 }
 
 /* Su desktop JS rimuove popover e gli elementi si dispongono in linea */
-@media (min-width: 63.25rem) {
+@media (min-width: 1000px) {
     .navigation {
         --navigation-inline-list-padding: 0 0 0 1em;
         --navigation-inline-link-padding: 0 0.25em;
@@ -525,24 +562,9 @@ body {
     }
 }
 
-/* Destinazioni provvisorie dei link, da completare/sostituire in base al vostro case study */
-.chapters {
-    --chapters-padding: 2em 1.5em;
-    --chapters-section-min-height: 65vh;
-    --chapters-section-padding-top: 2em;
-
-    padding: var(--chapters-padding);
-    color: var(--color-white);
-    background: var(--color-black);
-    line-height: var(--text-200-line-height);
+.color-muted {
+    color: var(--color-muted);
 }
-
-.chapters section {
-    min-height: var(--chapters-section-min-height);
-    padding-top: var(--chapters-section-padding-top);
-    border-top: var(--border-width) solid var(--color-border-muted);
-}
-
-.chapters a {
-    color: inherit;
+.text-center{
+    text-align: center;
 }
