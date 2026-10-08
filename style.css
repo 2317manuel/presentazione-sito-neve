@@ -726,13 +726,25 @@ color: var(--color-white);
  
 }
  
+/* --- AGGIUNTA 2: Stile e comportamento delle card --- */
 .breakoutTabs-card {
     display: flex;
     flex-direction: column;
     gap: 1em;
     border-top: 1px solid var(--color-border-muted);
     padding-top: 10px;
+    cursor: pointer; /* Fa apparire la manina del mouse */
 }
+  
+.breakoutTabs-card.breakoutTabs-card-active {
+    border-top: 2px solid var(--color-button-primary-bg);
+}
+  
+.breakoutTabs-card-active .breakoutTabs-card-title {
+    color: var(--color-black);
+}
+
+
  
 .breakoutTabs-card.breakoutTabs-card-active {
     border-top: 2px solid var(--color-button-primary-bg);
@@ -861,3 +873,34 @@ display: flex;
     color: #58635B;
  }
  
+ /* --- AGGIUNTA 1: Contenitore e immagine principale in alto --- */
+.main-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#active-preview-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- AGGIUNTA 3: Gestione Mobile (Sotto i 1000px) --- */
+@media (max-width: 1000px) {
+    .breakoutTabs-card-description {
+        display: none; /* Nasconde le descrizioni di default su mobile */
+    }
+   
+    .breakoutTabs-card.breakoutTabs-card-active .breakoutTabs-card-description {
+        display: block; /* Mostra solo la descrizione della card attiva */
+    }
+   
+    .icon-arrow {
+        display: inline-block;
+    }
+   
+    .breakoutTabs-card.breakoutTabs-card-active .icon-arrow {
+        transform: rotate(0deg);
+    }
+}

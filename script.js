@@ -59,3 +59,27 @@ desktopMedia.addEventListener('change', function () {
   else if (desktopMedia.matches && focusOnButton) navigationPanel.querySelector('a').focus();
   else if (!desktopMedia.matches && focusInNavigation) navigationButton.focus();
 });
+
+// --- CODICE PER I BREAKOUT TABS E CAMBIO IMMAGINE ---
+
+// 1. Selezioniamo tutte le card e l'immagine principale in alto
+const breakoutCards = document.querySelectorAll('.breakoutTabs-card');
+const mainPreviewImage = document.getElementById('active-preview-image');
+
+// 2. Diciamo al computer di mettersi in ascolto del "click" su ogni card
+breakoutCards.forEach(card => {
+    card.addEventListener('click', () => {
+        
+        // A. Rimuoviamo la classe 'breakoutTabs-card-active' da tutte le card
+        breakoutCards.forEach(c => c.classList.remove('breakoutTabs-card-active'));
+        
+        // B. Aggiungiamo la classe 'breakoutTabs-card-active' solo alla card che è stata cliccata
+        card.classList.add('breakoutTabs-card-active');
+        
+        // C. Leggiamo il percorso dell'immagine salvato nel 'data-image' e aggiorniamo l'immagine in alto
+        const newImageSrc = card.getAttribute('data-image');
+        if (newImageSrc && mainPreviewImage) {
+            mainPreviewImage.src = newImageSrc;
+        }
+    });
+});
