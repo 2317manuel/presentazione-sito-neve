@@ -90,7 +90,7 @@ img {
 
 .padding-32{
   padding: var(--spacing-32);
-
+}
 .theme-light {
   --color-muted: #58635B;
   --color-border-muted: #E4EBE6;
@@ -145,6 +145,8 @@ body {
   gap: 15px;     
   justify-content: space-between; 
   align-items: flex-start;
+  padding-right: 64px;
+  padding-left: 64px;
 }
  .box-intestazione{ 
   text-align: left;
@@ -234,7 +236,14 @@ line-height: var(--text-350-line-height);
 .hero-image {
   margin-top: calc(64px - var(--hero-content-gap));
 }
- 
+.hero-video {
+  width: 100%;
+  max-width: 600px; /* Modifica questo valore per rendere il video più o meno grande (es. 500px, 400px, ecc.) */
+  height: auto;     /* Mantiene le proporzioni corrette del video */
+  display: block;
+  margin: 0 auto;   /* Centra il video orizzontalmente se ha una larghezza massima */
+  border-radius: 12px; /* Opzionale: aggiunge bordi arrotondati estetici */
+}
 .button {
   text-decoration: none;
   color: inherit;
@@ -309,6 +318,63 @@ color: var(--color-white);
     transform: none;
     outline: var(--focus-outline-width) solid var(--color-focus);
     outline-offset: var(--focus-outline-offset);
+}
+/* Centra la struttura generale e dà respiro ai lati */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 40px auto; 
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Contenitore Grid: forza esattamente 3 colonne uguali su desktop */
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+}
+
+/* I 3 box */
+.card {
+  aspect-ratio: 1 / 1; 
+  border: 2px solid #3498db; 
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 24px; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+
+/* Immagine icona */
+.card-icon {
+  width: 40px;  
+  height: auto; 
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive: quando lo schermo diventa piccolo, passa a 1 sola colonna */
+@media (max-width: 768px) {
+  .container-cards {
+    grid-template-columns: 1fr; 
+  }
+  .card {
+    aspect-ratio: auto; 
+    height: 250px;      
+  }
 }
 
 .navigation {
@@ -637,6 +703,12 @@ color: var(--color-white);
     }
 }
 
+@media (max-width: 768px) {
+  .container-intestazione {
+    flex-direction: column;
+  }
+}
+
 .color-muted {
     color: var(--color-muted);
 }
@@ -724,6 +796,9 @@ color: var(--color-white);
     .breakoutTabs-card-active .icon-arrow {
         transform: rotate(0deg);
     }
+
+    /* Centra la struttura generale e dà respiro ai lati */
+
     
 }
  .entra-progetto{
