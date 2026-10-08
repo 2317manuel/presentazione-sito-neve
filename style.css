@@ -47,6 +47,7 @@ img {
   --color-focus: #3094ff;
   --container-width: 1280px;
   --spacing-64: 64px;
+  --spacing-32: 32px;
   --eyebrow-font-size: 14px;
   --text-200-font-size: 16px;
   --text-200-line-height: 1.5;
@@ -86,6 +87,9 @@ img {
 .padding-64{
     padding: var(--spacing-64);
 }
+
+.padding-32{
+  padding: var(--spacing-32);
 
 .theme-light {
   --color-muted: #58635B;
@@ -141,7 +145,6 @@ body {
   gap: 15px;     
   justify-content: space-between; 
   align-items: flex-start;
-    text-align: left;
 }
  .box-intestazione{ 
   text-align: left;
@@ -198,6 +201,12 @@ body {
   font-size: var(--text-200-font-size);
   line-height: var(--text-200-line-height);
   color: var(--color-white);
+}
+.text-size-200-black {
+  font-size: var(--text-200-font-size);
+  line-height: var(--text-200-line-height);
+  color: var(--color-black);
+  font-weight: 600;
 }
 
 .text-size-200-footer{
@@ -770,5 +779,10 @@ display: flex;
   border-bottom: 1px solid var(--color-border-dark) ;
 
   
+ }
+
+ .titoli-intestazione{
+    font-size: 14px;
+    color: #58635B;
  }
  
