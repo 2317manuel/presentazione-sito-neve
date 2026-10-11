@@ -904,3 +904,18 @@ display: flex;
         transform: rotate(0deg);
     }
 }
+
+/* --- RESET E PULIZIA BOTTONI BREAKOUT TABS --- */
+.breakoutTabs-card-button {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Evita che compaiano sfondi strani quando ci passi sopra col mouse */
+.breakoutTabs-card-button:hover {
+    background: transparent !important;
+}
