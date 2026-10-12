@@ -66,7 +66,7 @@ desktopMedia.addEventListener('change', function () {
 const breakoutCards = document.querySelectorAll('.breakoutTabs-card');
 const mainPreviewImage = document.getElementById('active-preview-image');
 
-// 2. Diciamo al computer di mettersi in ascolto del "click" su ogni card
+// 2. in ascolto del "click" su ogni card
 breakoutCards.forEach(card => {
     card.addEventListener('click', () => {
         
