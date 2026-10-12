@@ -167,7 +167,7 @@ body {
 }
  
 .eyebrow {
-  font-size: var(14px);
+  font-size: var(--eyebrow-font-size);
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -352,8 +352,6 @@ color: var(--color-white);
 }
 
 .card-centrale {
-  aspect-ratio: 1 / 1; /* Rende la card perfettamente quadrata */
-  flex: 1; /* Le fa occupare lo stesso spazio in larghezza */
   border-top: 1px solid var(--color-border-muted); 
   border-bottom: 1px solid var(--color-border-muted); 
   background-color: #ffffff;
@@ -366,6 +364,7 @@ color: var(--color-white);
   gap: 16px; /* Riduce e controlla lo spazio esatto tra l'icona, il titolo e la descrizione */
  /* Evita che i bordi adiacenti si raddoppiandoci creando linee spesse */
 }
+
 
 /* Immagine icona */
 .card-icon {
@@ -1004,4 +1003,114 @@ display: flex;
 .footer-bottom {
     display: flex;
     justify-content: center;
+}
+
+/* --- LAYOUT GENERALE A DUE COLONNE (MAIN CONTENT) --- */
+.main-content-layout {
+    display: flex;
+    border-left: 1px solid var(--color-border-muted);
+    border-right: 1px solid var(--color-border-muted);
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 64px;
+    padding: var(--spacing-64);
+    padding-bottom: 48px;
+}
+
+.content-left {
+    flex: 1;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+/* --- SIDEBAR DESTRA --- */
+.sidebar-right {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sidebar-block h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-link {
+    color: #888888;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+/* Hover: niente cambio colore, solo sottolineatura */
+.sidebar-link:hover {
+    color: #888888;
+    text-decoration: underline;
+}
+
+
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+}
+
+.figma-link {
+    display: inline-block;
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.figma-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* --- ELEMENTI TESTUALI E TAG --- */
+.category-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #888888;
+    margin-bottom: 12px
+
+    
+}
+
+
+
+
+/* --- ADATTAMENTO MOBILE --- */
+@media (max-width: 768px) {
+    .main-content-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .sidebar-right {
+        width: 100%;
+        position: static;
+    }
 }
