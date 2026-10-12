@@ -856,7 +856,7 @@ display: flex;
  
  .box-footer{
     display: flex;
-  align-items: center;     /* Allinea verticalmente gli elementi */
+  align-items: flex-start ;
   gap: 40px;
   justify-content: space-between;
   padding-left:260px;
@@ -918,4 +918,57 @@ display: flex;
 /* Evita che compaiano sfondi strani quando ci passi sopra col mouse */
 .breakoutTabs-card-button:hover {
     background: transparent !important;
+}
+.box-footer > div:first-child {
+    flex-shrink: 0; 
+}
+
+/* --- FOOTER DESKTOP --- */
+.box-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-logo-box {
+    flex-shrink: 0;
+}
+
+.box-destra-footer {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.footer-back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-top-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.footer-top-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-top-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
 }
