@@ -321,38 +321,70 @@ color: var(--color-white);
 }
 /* Centra la struttura generale e dà respiro ai lati */
 .page-wrapper {
-  max-width: 1200px;
-  margin: 40px auto; 
-  padding: 0 20px;
+ max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: -1px;
+  margin-bottom: -1px;
   box-sizing: border-box;
 }
 
 /* Contenitore Grid: forza esattamente 3 colonne uguali su desktop */
 .container-cards {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
 }
 
 /* I 3 box */
+
 .card {
-  aspect-ratio: 1 / 1; 
-  border: 2px solid #3498db; 
-  border-radius: 8px;
+  border: 1px solid var(--color-border-muted); 
   background-color: #ffffff;
-  padding: 24px; 
+  padding: var(--spacing-64); /* Riduci leggermente il padding se vuoi compattare i bordi interni */
   box-sizing: border-box; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: flex-start; /* Allinea tutto in alto invece di spargerlo con space-between */
   align-items: flex-start; 
+  gap: 16px; /* Riduce e controlla lo spazio esatto tra l'icona, il titolo e la descrizione */
+ /* Evita che i bordi adiacenti si raddoppiandoci creando linee spesse */
+}
+
+.card-centrale {
+  aspect-ratio: 1 / 1; /* Rende la card perfettamente quadrata */
+  flex: 1; /* Le fa occupare lo stesso spazio in larghezza */
+  border-top: 1px solid var(--color-border-muted); 
+  border-bottom: 1px solid var(--color-border-muted); 
+  background-color: #ffffff;
+  padding: var(--spacing-64); /* Riduci leggermente il padding se vuoi compattare i bordi interni */
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Allinea tutto in alto invece di spargerlo con space-between */
+  align-items: flex-start; 
+  gap: 16px; /* Riduce e controlla lo spazio esatto tra l'icona, il titolo e la descrizione */
+ /* Evita che i bordi adiacenti si raddoppiandoci creando linee spesse */
 }
 
 /* Immagine icona */
 .card-icon {
   width: 40px;  
-  height: auto; 
+  height: 40px; 
+  padding: 8px;
+  border-radius: 12px;
+  display: inline-block;
+  object-fit: contain;
+  background-color:#EBF9F4 ;
 }
+
+.card-title-concept {
+  font-weight: var(--font-weight-medium);
+  font-size: 22px;
+  line-height: 1,4;
+  margin: 0;
+}
+
 
 .card-title {
   font-weight: bold;
@@ -361,8 +393,9 @@ color: var(--color-white);
 }
 
 .card-desc {
-  font-size: 14px;
-  color: #666;
+  font-size: var(--text-200-font-size);
+  line-height: var(--text-200-line-height);
+  color: #58635B;
   margin: 0;
 }
 
