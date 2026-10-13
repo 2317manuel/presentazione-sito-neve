@@ -1047,7 +1047,7 @@ display: flex;
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .sidebar-link {
@@ -1086,17 +1086,16 @@ display: flex;
 
 
 /* --- ELEMENTI TESTUALI E TAG --- */
-.category-tag {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: #888888;
-    margin-bottom: 12px
-
-    
+.category-tag {   
+  margin-bottom: 12px;
+  font-size: var(--eyebrow-font-size);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.42em;
 }
 
 
@@ -1113,4 +1112,15 @@ display: flex;
         width: 100%;
         position: static;
     }
+}
+
+.padding-top {
+    padding-top: 10px;
+}
+
+.h3 {
+font-size: 28px;
+font-weight: 500;
+line-height: 135%;
+margin-bottom: 16px;
 }
