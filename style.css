@@ -1134,3 +1134,30 @@ font-weight: 500;
 line-height: 135%;
 margin-bottom: 16px;
 }
+.container-sitemap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-64);
+  
+}
+
+.box-sitemap {
+   margin-left:auto;
+    margin-right:auto;
+  
+
+}
+
+.box-sitemap img{
+    min-width: 420px;
+}
+@media (max-width: 768px) {
+
+     .container-sitemap {
+      flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        text-align: center;
+    }
+}
