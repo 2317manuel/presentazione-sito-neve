@@ -925,7 +925,7 @@ display: flex;
 }
 
 /* --- AGGIUNTA 3: Gestione Mobile (Sotto i 1000px) --- */
-@media (max-width: 1000px) {
+@media (max-width: 100px) {
     .breakoutTabs-card-description {
         display: none; /* Nasconde le descrizioni di default su mobile */
     }
@@ -1160,4 +1160,126 @@ margin-bottom: 16px;
         align-items: center;
         text-align: center;
     }
+}
+
+.box-highlights{
+    display: flex;
+    padding: var(--spacing-64);
+    }
+
+    breakoutTabs-card-description-highlights
+    breakoutTabs-card-title-highlights
+    breakoutTabs-title-box-highlights
+    breakoutTabs-card-button-highlights
+    breakoutTabs-card-highlights
+    breakoutTabs-card-active-highlights
+    breakoutTabs-box-highlights
+
+  
+
+.breakoutTabs-box-highlights {
+    max-width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: var(--spacing-64) 0;
+    justify-content: center;
+ 
+}
+ 
+/* --- AGGIUNTA 2: Stile e comportamento delle card --- */
+.breakoutTabs-card-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-top: 1px solid var(--color-border-muted);
+    padding-top: 10px;
+    cursor: pointer; /* Fa apparire la manina del mouse */
+}
+  
+.breakoutTabs-card-highlights.breakoutTabs-card-active-highlights {
+    border-top: 2px solid var(--color-button-primary-bg);
+}
+  
+.breakoutTabs-card-active-highlights .breakoutTabs-card-title-highlights {
+    color: var(--color-black);
+}
+
+
+ 
+.breakoutTabs-card-highlights.breakoutTabs-card-active-highlights {
+    border-top: 2px solid var(--color-button-primary-bg);
+}
+ 
+.breakoutTabs-card-active-highlights .breakoutTabs-card-title-highlights {
+    color: var(--color-black);
+}
+ 
+.breakoutTabs-card-highlights .icon {
+    width: 20px;
+    margin-bottom: 4px;
+}
+ 
+.icon-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+ 
+ 
+.icon-arrow {
+    display: none;
+    transform: rotate(180deg);
+}
+ 
+.breakoutTabs-card-button-highlights {
+    display: flex;
+    flex-direction: column;
+}
+ 
+ 
+.breakoutTabs-title-box-highlights {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.breakoutTabs-card-button-highlights {
+    background: none;
+    border-color: 1px solid var(--);
+}
+ 
+@media (max-width: 1000px) {
+    .breakoutTabs-box-highlights {
+        grid-template-columns: 1fr;
+    }
+ 
+    .breakoutTabs-card-description-highlights {
+        display: none;
+    }
+ 
+    .breakoutTabs-card-active-highlights .breakoutTabs-card-description-highlights {
+        display: block;
+    }
+ 
+    .icon-arrow {
+        display: inline-block;
+    }
+ 
+    .breakoutTabs-card-active-highlights .icon-arrow {
+        transform: rotate(0deg);
+    }
+
+    .breakoutTabs-card-button-highlights {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Evita che compaiano sfondi strani quando ci passi sopra col mouse */
+.breakoutTabs-card-button-highlights:hover {
+    background: transparent !important;
 }
