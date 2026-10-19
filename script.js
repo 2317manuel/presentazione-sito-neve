@@ -83,3 +83,22 @@ breakoutCards.forEach(card => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const faqTriggers = document.querySelectorAll(".faq-trigger");
+
+  faqTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const item = trigger.closest(".faq-item");
+      const isOpen = item.classList.contains("open");
+
+      if (!isOpen) {
+        item.classList.add("open");
+        trigger.setAttribute("aria-expanded", "true");
+      } else {
+        item.classList.remove("open");
+        trigger.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+});
