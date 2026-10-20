@@ -92,12 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = trigger.closest(".faq-item");
       const isOpen = item.classList.contains("open");
 
+      // 1. Chiude TUTTI i blocchi presenti nella lista
+      document.querySelectorAll(".faq-item").forEach((otherItem) => {
+        otherItem.classList.remove("open");
+        otherItem.querySelector(".faq-trigger").setAttribute("aria-expanded", "false");
+      });
+
+      // 2. Se il blocco cliccato non era già aperto, lo apre
       if (!isOpen) {
         item.classList.add("open");
         trigger.setAttribute("aria-expanded", "true");
-      } else {
-        item.classList.remove("open");
-        trigger.setAttribute("aria-expanded", "false");
       }
     });
   });
