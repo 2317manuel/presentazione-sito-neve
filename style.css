@@ -1159,7 +1159,7 @@ margin-bottom: 16px;
    box-sizing: border-box;  /* Include padding e bordi nella larghezza */
   margin-left: auto;       /* Centra il blocco se ha un max-width inferiore */
   margin-right: auto;
-  outline: 1px solid red;‰
+  outline: 1px solid red;
 
 }
 
